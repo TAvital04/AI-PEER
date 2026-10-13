@@ -184,13 +184,19 @@ UCF Senior Design 2025-2026 | Computer Science | UCF College of Medicine
 
 | Document | Description |
 |----------|-------------|
-| [ARCHITECTURE.md](ARCHITECTURE.md) | System diagram, data flows, Firestore schema, and design decisions |
-| [FILE_MAP.md](FILE_MAP.md) | Complete source file listing with one-line descriptions of every file |
-| [SETUP.md](SETUP.md) | Step-by-step environment setup for a new machine (Node, JDK, Xcode, CocoaPods, env vars) |
-| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Runbook for common build and runtime failures across iOS, Android, and Cloud Run |
-| [GLOSSARY.md](GLOSSARY.md) | Plain-English definitions of clinical and technical terms for sponsors and non-developers |
-| [VISION_PIPELINE.md](VISION_PIPELINE.md) | Deep dive on the MediaPipe pose estimation → form-check → rep-counting loop |
-| [LLM_PIPELINE.md](LLM_PIPELINE.md) | Deep dive on the on-device llama.rn chat pipeline: model download, inference, system prompt, chat history |
+| [docs/README.md](docs/README.md) | Central documentation directory hub, role navigation, and documentation standards |
+| [docs/architecture/ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md) | System diagram, data flows, Firestore schema, and design decisions |
+| [docs/architecture/FILE_MAP.md](docs/architecture/FILE_MAP.md) | Complete source file listing with one-line descriptions of every file |
+| [docs/development/SETUP.md](docs/development/SETUP.md) | Step-by-step environment setup for a new machine (Node, JDK, Xcode, CocoaPods, env vars) |
+| [docs/development/TROUBLESHOOTING.md](docs/development/TROUBLESHOOTING.md) | Runbook for common build and runtime failures across iOS, Android, and Cloud Run |
+| [docs/development/TESTING.md](docs/development/TESTING.md) | Testing and QA guide: doctor preflights, mobile pose validation, clinical tests, and backend APIs |
+| [docs/development/CONTRIBUTING.md](docs/development/CONTRIBUTING.md) | Git workflow, branch naming conventions, PR guidelines, and code review standards |
+| [docs/pipelines/VISION_PIPELINE.md](docs/pipelines/VISION_PIPELINE.md) | Deep dive on the MediaPipe pose estimation → form-check → rep-counting loop |
+| [docs/pipelines/LLM_PIPELINE.md](docs/pipelines/LLM_PIPELINE.md) | Deep dive on the on-device llama.rn chat pipeline: model download, inference, system prompt, chat history |
+| [docs/pipelines/AUDIO_PIPELINE.md](docs/pipelines/AUDIO_PIPELINE.md) | Real-time audio queue, live spoken form feedback, debounce rules, and STT voice accessibility |
+| [docs/compliance/HIPAA_COMPLIANCE.md](docs/compliance/HIPAA_COMPLIANCE.md) | HIPAA technical/administrative safeguards, on-device data isolation, and BAA compliance |
+| [docs/deployment/PRODUCTION_MIGRATION.md](docs/deployment/PRODUCTION_MIGRATION.md) | Comprehensive cloud deployment and cutover runbook for UCF College of Medicine IT |
+| [docs/clinical/GLOSSARY.md](docs/clinical/GLOSSARY.md) | Plain-English definitions of clinical and technical terms for sponsors and non-developers |
 | [API/README.md](API/README.md) | Backend routes, auth middleware, environment variables, and deployment |
 | [functions/README.md](functions/README.md) | REDCap sync Cloud Function: schedule, logic, and field mapping |
 | [front-end/AI-PEER/README.md](front-end/AI-PEER/README.md) | Frontend build, run, iOS/Android troubleshooting, and project structure |

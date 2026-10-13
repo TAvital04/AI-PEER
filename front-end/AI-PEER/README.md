@@ -294,7 +294,7 @@ Real-time exercise form monitoring AND open-palm gesture-confirm start flow, bot
 
 ### How to add a new exercise
 
-See `VISION_PIPELINE.md` (repo root) for the complete specification. The high-level steps are:
+See [`docs/pipelines/VISION_PIPELINE.md`](../../docs/pipelines/VISION_PIPELINE.md) for the complete specification. The high-level steps are:
 
 - Create a new rule file in the appropriate subdirectory under `src/vision/exercises/` (e.g., `src/vision/exercises/balance/myExercise.ts`). Export a rule object conforming to the `ExerciseRule` type defined in `src/vision/exercises/types.ts`.
 - Register the new rule in the subdirectory's `index.ts` and in the top-level `src/vision/exercises/index.ts`. The exercise ID must be unique across all categories.

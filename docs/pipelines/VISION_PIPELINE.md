@@ -137,8 +137,7 @@ items 2-3. If the C++ template errors come back, run:
 bash front-end/AI-PEER/scripts/ios-doctor.sh
 ```
 
-Note: `TROUBLESHOOTING.md` at the repo root is currently a stub with placeholder text.
-The authoritative runbook for native plugin issues is the memory file above.
+For a complete diagnosis and step-by-step fix for native plugin build failures, refer to [`docs/development/TROUBLESHOOTING.md`](../development/TROUBLESHOOTING.md).
 
 ---
 

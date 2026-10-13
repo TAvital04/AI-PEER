@@ -40,7 +40,7 @@ These choices block everything else and should be confirmed before any provision
 
 ## 3. Compliance prerequisites
 
-This project stores identifiable patient data. The repo's `Allowed BAA.txt` enumerates GCP services covered by UCF's BAA. Cross-referencing against what AI-PEER uses:
+This project stores identifiable patient data. See [`HIPAA_COMPLIANCE.md`](../compliance/HIPAA_COMPLIANCE.md) for complete privacy safeguards. The repo's [`Allowed BAA.txt`](../compliance/Allowed%20BAA.txt) enumerates GCP services covered by UCF's BAA. Cross-referencing against what AI-PEER uses:
 
 | Service | In use | On BAA list |
 |---|---|---|
