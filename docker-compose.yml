@@ -1,0 +1,47 @@
+name: aipeer
+
+services:
+  # =========================================================================
+  # 1. Express API Backend (Cloud Run local emulation)
+  # =========================================================================
+  api:
+    build:
+      context: ./API
+      dockerfile: Dockerfile
+    container_name: aipeer-api
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:8080"
+    env_file:
+      - path: ./API/.env
+        required: false
+    environment:
+      - NODE_ENV=development
+      - PORT=8080
+
+  # =========================================================================
+  # 2. Android App Compilation Container (React Native / Expo bare)
+  # =========================================================================
+  android-builder:
+    build:
+      context: ./front-end/AI-PEER
+      dockerfile: Dockerfile.android
+    container_name: aipeer-android-builder
+    working_dir: /app
+    volumes:
+      # Mount project source
+      - ./front-end/AI-PEER:/app
+      # Persist Gradle cache between builds to prevent re-downloading dependencies
+      - gradle-cache:/root/.gradle
+      # Export compiled APKs to host
+      - ./build-output:/output
+    environment:
+      - GRADLE_OPTS=-Dorg.gradle.daemon=false -Dorg.gradle.jvmargs="-Xmx4096m -XX:MaxMetaspaceSize=1024m"
+      - REACT_NATIVE_ARCHITECTURES=arm64-v8a
+    # Default command builds debug APK and copies to mounted /output directory
+    command: >
+      bash -c "npm ci && cd android && ./gradlew assembleDebug -PreactNativeArchitectures=arm64-v8a && mkdir -p /output && cp app/build/outputs/apk/debug/app-debug.apk /output/app-debug.apk && echo '===> Build successful! APK ready at build-output/app-debug.apk'"
+
+volumes:
+  gradle-cache:
+    name: aipeer-gradle-cache

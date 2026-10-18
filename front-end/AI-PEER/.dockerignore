@@ -1,0 +1,14 @@
+# Ignore local build artifacts and caches when building Docker images
+node_modules/
+android/app/build/
+android/.gradle/
+android/build/
+ios/
+.expo/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
